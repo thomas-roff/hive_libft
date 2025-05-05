@@ -6,11 +6,11 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 23:11:17 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/18 23:12:02 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:46:48 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

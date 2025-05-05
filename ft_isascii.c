@@ -6,13 +6,13 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 23:09:25 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/18 23:10:18 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:46:20 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 126)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

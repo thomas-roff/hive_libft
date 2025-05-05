@@ -6,16 +6,18 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:21:40 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/18 21:56:40 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:19:14 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

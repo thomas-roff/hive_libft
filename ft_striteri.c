@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 22:33:45 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/25 16:16:15 by thblack-         ###   ########.fr       */
+/*   Created: 2025/05/05 11:50:30 by thblack-          #+#    #+#             */
+/*   Updated: 2025/05/05 11:53:54 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 'a' && c <= 'z')
-		c = c - ('a' - 'A');
-	return (c);
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

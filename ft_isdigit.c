@@ -6,13 +6,13 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 23:01:53 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/18 23:02:53 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:45:55 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

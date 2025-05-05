@@ -6,22 +6,27 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 22:38:24 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/23 11:50:22 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:19:26 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ft_strchr(const char *s, int c)
-{
-	int		i;
-	char	chr;
+#include "libft.h"
+#include <stddef.h>
 
-	i = 0;
-	chr = (char)c;
-	while (s[i] != '\0')
+char	*ft_strchr(const char *s, int c)
+{
+	char	*sc;
+	char	cc;
+
+	sc = (char *)s;
+	cc = (char)c;
+	if (cc == '\0')
+		return (sc + ft_strlen(sc));
+	while (*sc != '\0')
 	{
-		if (s[i] == chr)
-			return (&s[i]);
-		i++;
+		if (*sc == cc)
+			return (sc);
+		sc++;
 	}
-	return (0);
+	return (NULL);
 }

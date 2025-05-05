@@ -6,24 +6,26 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:01:44 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/23 11:47:10 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:51:43 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memchr(const void *s, int c, int n)
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
 	char	cc;
 	char	*str;
+	size_t	i;
 
-	i = 0;
 	cc = (char)c;
 	str = (char *)s;
+	i = 0;
 	while (i < n)
 	{
 		if (str[i] == cc)
 			return (&str[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

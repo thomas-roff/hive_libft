@@ -6,21 +6,23 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:54:15 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/23 12:01:49 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:54:19 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strdup.c(const char *s1)
+char	*ft_strdup(const char *s)
 {
-	unsigned int	len;
-	char			*cpy;
+	size_t	len;
+	char	*sc;
 
-	len = ft_strlen(s1);
-	cpy = malloc(len * sizeof(char));
-	if (cpy == 0)
-		return (0);
-	ft_strlcpy(cpy, s1, len);
-	return (cpy);
+	len = ft_strlen(s);
+	sc = malloc((len + 1) * sizeof(char));
+	if (!sc)
+		return (NULL);
+	ft_strlcpy(sc, s, len + 1);
+	return (sc);
 }

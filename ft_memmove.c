@@ -6,28 +6,36 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 22:23:37 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/23 11:37:33 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/26 17:58:09 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, int len)
+#include <stddef.h>
+
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	int		i;
-	char	*dstc;
+	size_t	i;
+	char	*destc;
 	char	*srcc;
 
-	i = -1;
-	dstc = (char *)dst;
+	i = 0;
+	destc = (char *)dest;
 	srcc = (char *)src;
-	if (srcc < dstc)
+	if (srcc < destc)
 	{
-		while (--len >= 0)
-			*(dstc + len) = *(srcc + len);
+		while (len > 0)
+		{
+			len--;
+			*(destc + len) = *(srcc + len);
+		}
 	}
 	else
 	{
-		while (i++ < len)
-			*(dstc + i) = *(srcc + i);
+		while (i < len)
+		{
+			*(destc + i) = *(srcc + i);
+			i++;
+		}
 	}
-	return (dst);
+	return (dest);
 }

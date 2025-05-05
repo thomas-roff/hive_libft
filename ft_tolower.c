@@ -6,20 +6,13 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 22:38:24 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/19 22:40:50 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/04/25 17:02:17 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_tolower(char *string)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (string[i] != '\0')
-	{
-		if (string[i] >= 'A' && <= 'Z')
-			string[i] = string[i] + 32;
-		i++;
-	}
-	return (string);
+	if (c >= 'A' && c <= 'Z')
+		c = c + ('a' - 'A');
+	return (c);
 }
