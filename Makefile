@@ -26,15 +26,18 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 OBJECTS_M = $(MANDATORY:.c=.o)
 OBJECTS_B = $(BONUS:.c=.o)
 HEADER = libft.h
-LIBNAME = libft.a
+NAME = libft.a
 
-all: $(LIBNAME)
+all: $(NAME)
 
-$(LIBNAME): $(OBJECTS_M)
-	ar rcs $(LIBNAME) $(OBJECTS_M)
+$(NAME): $(OBJECTS_M)
+	ar rcs $(NAME) $(OBJECTS_M)
 
-bonus: $(OBJECTS_M) $(OBJECTS_B)
-	ar rcs $(LIBNAME) $(OBJECTS_M) $(OBJECTS_B)
+bonus: .bonus
+
+.bonus: $(OBJECTS_M) $(OBJECTS_B)
+	ar rcs $(NAME) $(OBJECTS_M) $(OBJECTS_B)
+	touch .bonus
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -43,7 +46,7 @@ clean:
 	rm -f $(OBJECTS_M) $(OBJECTS_B)
 
 fclean: clean
-	rm -f $(LIBNAME)
+	rm -f $(NAME)
 
 re: fclean all
 
