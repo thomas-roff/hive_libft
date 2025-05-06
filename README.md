@@ -10,7 +10,7 @@ documentation.
 
 ## Functions
 
-* Extra functions not required by Libft project.
+\* Extra functions not required by Libft project.
 
 #### Checking & Measuring
 
