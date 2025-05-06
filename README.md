@@ -19,7 +19,7 @@ isdigit
 isalnum
 isascii
 isprint
-isspace *
+\*isspace
 strlen
 
 #### Memory Setting, Changing & Moving
