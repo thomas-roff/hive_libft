@@ -6,32 +6,34 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:40:24 by thblack-          #+#    #+#             */
-/*   Updated: 2025/04/22 19:58:53 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/05/06 14:39:17 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
 	int	res;
 	int	pn;
-	int	i;
+	int	digit;
 
 	res = 0;
 	pn = 1;
-	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
+	while (ft_isspace((int)*nptr) == 1)
+		nptr++;
+	if (*nptr == '-')
 	{
 		pn = pn * -1;
-		i++;
+		nptr++;
 	}
-	else if (nptr[i] == '+')
-		i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	else if (*nptr == '+')
+		nptr++;
+	while (ft_isdigit((int)*nptr) == 1)
 	{
-		res = res * 10 + (nptr[i] - '0');
-		i++;
+		digit = *nptr - '0';
+		res = res * 10 + digit;
+		nptr++;
 	}
 	return (res * pn);
 }

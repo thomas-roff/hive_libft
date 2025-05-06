@@ -6,17 +6,11 @@
 /*   By: thblack- <thblack-@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:20:52 by thblack-          #+#    #+#             */
-/*   Updated: 2025/05/05 15:35:21 by thblack-         ###   ########.fr       */
+/*   Updated: 2025/05/06 14:51:02 by thblack-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-typedef struct s_word
-{
-	size_t	start;
-	size_t	len;
-}			t_word;
 
 static size_t	ft_wcount(char const *s, char c)
 {
@@ -37,9 +31,8 @@ static size_t	ft_wcount(char const *s, char c)
 	return (wcount);
 }
 
-static t_word	ft_findword(char const *s, char c, size_t windex)
+static void	ft_findword(int *word, char const *s, char c, size_t windex)
 {
-	t_word	word;
 	size_t	wcount;
 	size_t	i;
 
@@ -49,20 +42,19 @@ static t_word	ft_findword(char const *s, char c, size_t windex)
 	{
 		if (s[i] != c && s[i])
 		{
-			word.start = i;
-			word.len = 0;
+			word[0] = i;
+			word[1] = 0;
 			while (s[i] != c && s[i])
 			{
-				word.len++;
+				word[1]++;
 				i++;
 			}
 			if (wcount++ == windex)
-				return (word);
+				return ;
 		}
 		else
 			i++;
 	}
-	return ((t_word){0, 0});
 }
 
 static void	ft_freearray(char **array)
@@ -82,7 +74,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	size_t	wcount;
-	t_word	word;
+	int		word[2];
 	size_t	i;
 
 	if (!s)
@@ -94,11 +86,11 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < wcount)
 	{
-		word = ft_findword(s, c, i);
-		array[i] = malloc((word.len + 1) * sizeof(char));
+		ft_findword(word, s, c, i);
+		array[i] = malloc((word[1] + 1) * sizeof(char));
 		if (!array[i])
 			return (ft_freearray(array), NULL);
-		ft_strlcpy(array[i], s + word.start, word.len + 1);
+		ft_strlcpy(array[i], s + word[0], word[1] + 1);
 		i++;
 	}
 	array[i] = NULL;

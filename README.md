@@ -10,6 +10,8 @@ documentation.
 
 ## Functions
 
+* Extra functions not required by Libft project.
+
 #### Checking & Measuring
 
 isalpha
@@ -17,6 +19,7 @@ isdigit
 isalnum
 isascii
 isprint
+isspace *
 strlen
 
 #### Memory Setting, Changing & Moving
