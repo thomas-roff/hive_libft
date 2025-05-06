@@ -1,4 +1,4 @@
-# libft
+# hive_libft
 Libft Project for Hive, Helsinki
 
 Libft is custom library with implementations of many functions common to standard C libraries. This code was written in 
@@ -9,61 +9,70 @@ are prototyped according to manual entries on Linux. Other functions are accordi
 documentation.
 
 ## Functions
+
 #### Checking & Measuring
-ft_isalpha
-ft_isdigit
-ft_isalnum
-ft_isascii
-ft_isprint
-ft_strlen
+
+isalpha
+isdigit
+isalnum
+isascii
+isprint
+strlen
 
 #### Memory Setting, Changing & Moving
-ft_memset
-ft_bzero
-ft_memcpy
-ft_memmove
-ft_strlcpy
-ft_strlcat
-ft_toupper
-ft_tolower
+
+memset
+bzero
+memcpy
+memmove
+strlcpy
+strlcat
+toupper
+tolower
 
 #### Comparing & Searching
-ft_strchr
-ft_strrchr
-ft_strncmp
-ft_memchr
-ft_memcmp
-ft_strnstr
+
+strchr
+strrchr
+strncmp
+memchr
+memcmp
+strnstr
 
 #### Converting ASCII <> INT
-ft_atoi
-ft_itoa
+
+atoi
+itoa
 
 #### Memory Allocating & Duplicating
-ft_calloc
-ft_strdup
-ft_substr
-ft_strjoin
-ft_strtrim
-ft_split
+
+calloc
+strdup
+substr
+strjoin
+strtrim
+split
 
 #### Applying Functions to Strings
-ft_strmapi
-ft_striteri
+
+strmapi
+striteri
 
 #### Writing
-ft_putchar_fd
-ft_putstr_fd
-ft_putendl_fd
-ft_putnbr_fd
+
+putchar\_fd
+putstr\_fd
+putendl\_fd
+putnbr\_fd
 
 #### Linked Lists
-ft_lstnew
-ft_lstadd_front
-ft_lstsize
-ft_lstlast
-ft_lstadd_back
-ft_lstdelone
-ft_lstclear
-ft_lstiter
-ft_lstmap
+
+lstnew
+lstadd\_front
+lstsize
+lstlast
+lstadd\_back
+lstdelone
+lstclear
+lstiter
+lstmap
