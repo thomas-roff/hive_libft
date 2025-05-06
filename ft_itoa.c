@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stddef.h>
 
 static void	ft_nbrcpy(char *num, int n, int sign, int nlen)
 {
